@@ -30,3 +30,4 @@ target/
 
 ### VS Code ###
 .vscode/
+/web/node_modules/

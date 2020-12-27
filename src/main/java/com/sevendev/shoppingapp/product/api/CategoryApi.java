@@ -1,7 +1,7 @@
 package com.sevendev.shoppingapp.product.api;
 
-import com.sevendev.shoppingapp.product.model.product.ProductResponse;
-import com.sevendev.shoppingapp.product.service.ProductService;
+import com.sevendev.shoppingapp.product.model.category.CategoryResponse;
+import com.sevendev.shoppingapp.product.service.category.CategoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,14 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 
 @RestController
-@RequestMapping("/products")
+@RequestMapping("/category")
 @RequiredArgsConstructor
 @CrossOrigin("*")
-public class ProductApi {
-    private final ProductService productService;
+public class CategoryApi {
+
+    private final CategoryService categoryService;
 
     @GetMapping
-    public Flux<ProductResponse> getAllProducts() {
-        return productService.getAll();
+    public Flux<CategoryResponse> getAll() {
+        return categoryService.getAll();
     }
 }
